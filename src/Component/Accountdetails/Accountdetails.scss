@@ -1,0 +1,124 @@
+@import '../../Common/Mixin.scss';
+.name-main{
+  border: 1px solid black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.422), 0 0 15px rgba(0, 0, 0, 0.34);
+  height: 450px;
+  width: 510px;
+  margin: 20px 520px;
+  border-radius: 10px;
+
+  h2{
+    border-bottom: 2px solid black;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .name-form{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 20px;
+
+    .name-input{
+      font-size: 20px;    
+ 
+
+        input[name="name"],
+        input[name="email"],
+        input[name="mobile"],
+        input[name="password"] {
+            height: 20px;
+            width: 470px;
+        
+    }
+
+    @include hed {
+      input[name="name"],
+      input[name="email"],
+      input[name="mobile"],
+      input[name="password"] {
+          width: 100%; 
+    }
+    }
+  }
+    
+    button{
+      height: 100%;
+      width: 100%;
+      padding: 5px;
+      font-size: 20px;
+      background-color: rgb(21, 0, 21);
+      color: white;
+      border: 1px solid black;
+      cursor: pointer;
+      margin-top: 15px;
+
+      &:hover{
+        color: rgb(21, 0, 21);
+        background-color: white;
+    }
+
+      @include hed{
+        height: 100%;
+        width: 75%;
+      }
+    }
+  }
+
+  @include hed{
+    margin: 10px auto;
+    padding: 2px;
+    height: 100%;
+    width: 75%;
+  }
+}
+
+.account-details{
+  height: 310px;
+  width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.422), 0 0 5px rgba(0, 0, 0, 0.34);
+  margin: 20px 520px;
+  border-radius: 10px;
+  margin-bottom: 100px;
+  margin-top: 80px;
+
+  h2{
+    border-bottom: 2px solid black;
+    padding: 20px;
+    text-align: center;
+  }
+  button{
+    height: 35px;
+    width: 480px;
+    font-size: 20px;
+    background-color: rgb(21, 0, 21);
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 10px;
+
+    &:hover{
+        color: rgb(21, 0, 21);
+        background-color: white;
+    }
+
+    @include hed{
+      height: 100%;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+
+  p{
+    padding: 10px;
+  }
+@include hed{
+  margin: 20px auto;
+  margin-left: 50px;
+  height: 100%;
+  width: 75%;
+}
+
+}

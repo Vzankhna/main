@@ -1,0 +1,56 @@
+@import '../../Common/Mixin.scss';
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    
+    .left{
+
+        h1{
+            color: red;
+            padding-left: 150px;
+        }
+        button{
+            background-color: black;
+            color: whitesmoke;
+            height: 40px;
+            width: 100px;
+            margin-top: 20px;
+            margin-left: 250px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: white;
+            color: black;
+        }
+    }
+    .right{
+        img{
+            height: 500px;
+            width: 800px;
+            margin-top: 60px;
+        }
+    }
+    @include hed{
+        .left {
+            h1 {
+                padding-left: 20px;
+                font-size: 25px;
+            }
+            button {
+                margin-top: 10px;
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+        .right {
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+}
+

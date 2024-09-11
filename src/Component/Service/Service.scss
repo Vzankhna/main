@@ -1,0 +1,34 @@
+@import '../../Common/Mixin.scss';
+.service{
+    margin-top: 20px;
+    width: 90%;
+    margin-left: 100px;
+    margin-bottom: 50px;
+
+    @include hed{
+        margin-left: 20px;
+    width: 98%;
+
+    }
+    p{
+        margin-left: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        @include hed{
+            font-size: 20px;
+            margin-left: 5px;
+        }
+    }
+
+    .accordian{
+        width: 90%;
+        
+    }
+    @include hed{
+        .accordian {
+          width: 100%;
+          margin: 0;
+        }
+    }
+}

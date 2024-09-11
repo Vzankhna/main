@@ -1,0 +1,80 @@
+@mixin smv {
+    @media only screen and (max-width: 372px) {
+    @content;
+    }
+}
+
+@mixin ssmv {
+    @media only screen and (max-width: 545px) {
+    @content;
+    }
+}
+
+@mixin m450 {
+    @media only screen and (max-width: 450px) {
+    @content;
+    }
+}
+
+@mixin m619 {
+@media (max-width: 619px) {
+    @content;
+}
+}
+
+@mixin m500 {
+@media (max-width: 500px) {
+    @content;
+}
+}
+
+@mixin m1200 {
+@media (max-width: 1200px) {
+    @content;
+}
+}
+
+@mixin m1024 {
+@media (max-width: 1024px) {
+    @content;
+}
+}
+
+
+
+@mixin m730 {
+@media (max-width: 730px) {
+    @content;
+}
+}
+
+@mixin m395 {
+@media (max-width: 395px) {
+    @content;
+}
+}
+
+@mixin m380 {
+@media (max-width: 380px) {
+    @content;
+}
+}
+
+@mixin m335 {
+@media (max-width: 335px) {
+    @content;
+}
+}
+
+
+@mixin m320 {
+@media (max-width: 320px) {
+    @content;
+}
+}
+
+@mixin hed {
+    @media only screen and (max-width: 768px) {
+    @content;
+    }
+}

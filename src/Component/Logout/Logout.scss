@@ -1,0 +1,29 @@
+body {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .mod {
+    z-index: 999999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 150px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.422), 0 0 5px rgba(0, 0, 0, 0.34);
+    overflow: auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  
+  .conte {
+    font-size: 25px;
+    padding-top: 20px;
+  }  

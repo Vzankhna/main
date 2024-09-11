@@ -1,0 +1,112 @@
+@import '../../Common/Mixin.scss';
+
+.homedecoration {
+  width: 80%;
+  margin: 0 auto;
+
+  .hdtext {
+    margin-bottom: 20px;
+
+    p {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+
+      @include m1024{
+        font-size: 22px;
+      }
+      @include hed{
+        font-size: 20px;
+      }
+    }
+  }
+
+  .allbutton {
+    margin-bottom: 20px;
+
+    button {
+      margin: 5px;
+      padding: 10px 35px;
+      background-color: #F8F7FB;
+      border: 1px solid #F8F7FB;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #7C71DF;
+        color: white;
+      }
+
+      @include m1024{
+        padding: 8px 30px;
+      }
+      @include hed{
+        padding: 8px 30px;
+      }
+    }
+  }
+
+  .hdimage {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+
+  @include m1024{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px;
+  }
+  @include hed{
+    display: grid;
+    grid-template-columns: auto ;
+    gap: 10px;
+  }
+
+    img {
+      width: 100%;
+    }
+
+    img:nth-child(1) { height: 500px; }
+    img:nth-child(2) { height: 420px; }
+    img:nth-child(3) { height: 500px; }
+    img:nth-child(4) { height: 650px; }
+    img:nth-child(5) { height: 500px; margin-bottom: 100px; }
+    img:nth-child(6) { height: 650px; }
+    img:nth-child(7) { height: 400px; margin-top: 100px; }
+    img:nth-child(8) { height: 500px; margin-bottom: 100px; }
+    img:nth-child(9) { height: 400px; margin-top: 100px; }
+  }
+
+  .dshow {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    p {
+      font-size: 16px;
+
+      @include hed{
+        font-size: 15px;
+      }
+    }
+
+    button {
+      margin-top: 40px;
+      border: 1px solid #686A74;
+      background-color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+
+      @include hed{
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
+  }
+}

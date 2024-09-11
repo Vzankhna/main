@@ -1,0 +1,60 @@
+@import '../../Common/Mixin.scss';
+.banner {
+    position: relative;
+    padding: 20px;
+
+    @include hed{
+      display: flex;
+      flex-flow: wrap;
+    }
+  }
+  
+  .text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .text p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+  }
+  
+  .text h1 {
+    font-size: 50px;
+    color:#2E2F33;
+    margin-bottom: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 73.82px;
+  }
+  
+  .text span {
+    display: block;
+    font-size: 16px;
+    color: #2E2F33;
+    margin-bottom: 20px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30.2px;
+    text-align: center;
+  }
+  
+  .bannerimage {
+    text-align: center;
+
+  }
+  
+  .bannerimage img {
+    width: 1280px;
+    height: 427px;
+
+    @include hed{
+      width: 100%;
+      height: auto;
+    }
+  }
+  
