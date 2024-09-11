@@ -100,6 +100,8 @@ const handleNavigate = (category) =>{
     document.getElementById('change').src=img
   }
 
+  //close checkout page
+  const[close,setClose] = useState(false)
 
 
   //for product to sinngleproduct navigate
@@ -274,7 +276,7 @@ const handleDecreaseQuantity = async (categoryid,productid) => {
 };
 
   return (
-    <MyContext.Provider value={{isProductInCart,handleBuyNowClick,handleIncreaseQuantity,handleDecreaseQuantity,removeProductFromCart,cart,setCart,userdata,setUserdata,edit,setEdit,show,setShow,create,setCreate,matchNavigate,handlehover,error, setError,handlelogout,handleLogin,token,setToken,alert,setAlert,message,setMessage,load,setLoad,openregister,data,setData,handleNavigate,Navigate,service,setService,count,setCount}}>
+    <MyContext.Provider value={{close,setClose,isProductInCart,handleBuyNowClick,handleIncreaseQuantity,handleDecreaseQuantity,removeProductFromCart,cart,setCart,userdata,setUserdata,edit,setEdit,show,setShow,create,setCreate,matchNavigate,handlehover,error, setError,handlelogout,handleLogin,token,setToken,alert,setAlert,message,setMessage,load,setLoad,openregister,data,setData,handleNavigate,Navigate,service,setService,count,setCount}}>
         {children}
     </MyContext.Provider>
   )

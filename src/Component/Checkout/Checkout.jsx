@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import * as yup from 'yup';
 import { useFormik } from 'formik';
 import TextField from '@mui/material/TextField';
@@ -8,7 +8,7 @@ import './Checkout.scss';
 import { IoClose } from "react-icons/io5";
 import MyContext from '../../Common/Context/Mycontext';
 
-const Checkout = ({ onClose }) => {
+const Checkout = () => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -17,6 +17,7 @@ const Checkout = ({ onClose }) => {
   }, []);
 
   const { token, setShipping, setLoad, setAlert, setMessage, Navigate } = useContext(MyContext);
+  const [isOpen, setIsOpen] = useState(true);
 
   const formik = useFormik({
     initialValues: {
@@ -82,116 +83,126 @@ const Checkout = ({ onClose }) => {
     },
   });
 
+  const handleClose = () => {
+    setIsOpen(false); 
+  };
+
   return (
     <>
-      {!sessionStorage.getItem('token') ? (
-        <div className='checkout'>
-          <div className="checkout-overlay" onClick={onClose}></div>
-          <div className="checkoutform">
-            <div className="checkouthead">
-              <span onClick={onClose}><IoClose /></span>
-              <h1>Checkout</h1>
-            </div>
-            <form onSubmit={formik.handleSubmit}>
-              <p style={{ color: "black", fontSize: "25px", textAlign: "center", fontFamily: "arial" }}>
-                Welcome Back
-              </p>
-
-              <TextField
-                id="email"
-                name="email"
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email} 
-                label="Email" 
-                variant="outlined"
-                style={{ marginLeft: "100px", width: "340px", marginTop: "20px" }}
-              /> <br /> <br />
-
-              <TextField
-                id="firstname"
-                name="firstname"
-                value={formik.values.firstname}
-                onChange={formik.handleChange}
-                error={formik.touched.firstname && Boolean(formik.errors.firstname)}
-                helperText={formik.touched.firstname && formik.errors.firstname} 
-                label="Firstname" 
-                variant="outlined"
-                style={{ marginLeft: "100px", width: "340px", marginTop: "20px" }}
-              /> <br /> <br />
-
-              <TextField
-                id="lastname"
-                name="lastname"
-                value={formik.values.lastname}
-                onChange={formik.handleChange}
-                error={formik.touched.lastname && Boolean(formik.errors.lastname)}
-                helperText={formik.touched.lastname && formik.errors.lastname} 
-                label="lastname" 
-                variant="outlined"
-                style={{ marginLeft: "100px", width: "340px", marginTop: "20px" }}
-              /> <br /> <br />
-
-              <TextField
-                id="mobile"
-                name="mobile"
-                value={formik.values.mobile}
-                onChange={formik.handleChange}
-                error={formik.touched.mobile && Boolean(formik.errors.mobile)}
-                helperText={formik.touched.mobile && formik.errors.mobile} 
-                label="mobile" 
-                variant="outlined"
-                style={{ marginLeft: "100px", width: "340px", marginTop: "20px" }}
-              /> <br /> <br />
-
-              <TextField
-                id="address"
-                name="address"
-                value={formik.values.address}
-                onChange={formik.handleChange}
-                error={formik.touched.address && Boolean(formik.errors.address)}
-                helperText={formik.touched.address && formik.errors.address} 
-                label="address" 
-                variant="outlined"
-                style={{ marginLeft: "100px", width: "340px", marginTop: "20px" }}
-              /> <br /> <br />
-
-              <TextField
-                id="city"
-                name="city"
-                value={formik.values.city}
-                onChange={formik.handleChange}
-                error={formik.touched.city && Boolean(formik.errors.city)}
-                helperText={formik.touched.city && formik.errors.city} 
-                label="city" 
-                variant="outlined"
-                style={{ marginLeft: "100px", width: "340px", marginTop: "20px" }}
-              /> <br /> <br />
-
-              <TextField
-                id="country"
-                name="country"
-                value={formik.values.country}
-                onChange={formik.handleChange}
-                error={formik.touched.country && Boolean(formik.errors.country)}
-                helperText={formik.touched.country && formik.errors.country} 
-                label="country" 
-                variant="outlined"
-                style={{ marginLeft: "100px", width: "340px", marginTop: "20px" }}
-              /> <br /> <br />              
-
-
-
-              <div className="checkoutbutton">
-                <Button variant="contained" type='submit' onClick={()=>Navigate('/orderconfirm')}>Checkout</Button>
+      {isOpen ?(
+                <div className='checkout'>
+                <div className="checkout-overlay"></div>
+                <div className="checkoutform">
+                  <div className="checkouthead">
+                    <span onClick={handleClose}><IoClose /></span>
+                    <h1>Checkout</h1>
+                  </div>
+                  <form onSubmit={formik.handleSubmit}>
+                    <p style={{ color: "black", fontSize: "25px", textAlign: "center", fontFamily: "arial" }}>
+                      Customer Information <br />
+                      Have an account? <a href='login'>Login</a>
+                    </p>
+      
+                    <TextField
+                      id="email"
+                      name="email"
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      error={formik.touched.email && Boolean(formik.errors.email)}
+                      helperText={formik.touched.email && formik.errors.email} 
+                      label="Email" 
+                      variant="outlined"
+                      style={{ marginLeft: "210px", width: "340px", marginTop: "20px" }}
+                    /> <br /> <br />
+      
+                    <p style={{color:"gray",fontFamily:"arial",fontSize:"20px",marginLeft:"210px"}}>Shipping Address</p>
+      
+                    <TextField
+                      id="firstname"
+                      name="firstname"
+                      value={formik.values.firstname}
+                      onChange={formik.handleChange}
+                      error={formik.touched.firstname && Boolean(formik.errors.firstname)}
+                      helperText={formik.touched.firstname && formik.errors.firstname} 
+                      label="Firstname" 
+                      variant="outlined"
+                      style={{ marginLeft: "210px", width: "340px", marginTop: "20px" }}
+                    /> <br /> <br />
+      
+                    <TextField
+                      id="lastname"
+                      name="lastname"
+                      value={formik.values.lastname}
+                      onChange={formik.handleChange}
+                      error={formik.touched.lastname && Boolean(formik.errors.lastname)}
+                      helperText={formik.touched.lastname && formik.errors.lastname} 
+                      label="lastname" 
+                      variant="outlined"
+                      style={{ marginLeft: "210px", width: "340px", marginTop: "20px" }}
+                    /> <br /> <br />
+      
+                    <TextField
+                      id="mobile"
+                      name="mobile"
+                      value={formik.values.mobile}
+                      onChange={formik.handleChange}
+                      error={formik.touched.mobile && Boolean(formik.errors.mobile)}
+                      helperText={formik.touched.mobile && formik.errors.mobile} 
+                      label="mobile" 
+                      variant="outlined"
+                      style={{ marginLeft: "210px", width: "340px", marginTop: "20px" }}
+                    /> <br /> <br />
+      
+                    <TextField
+                      id="address"
+                      name="address"
+                      value={formik.values.address}
+                      onChange={formik.handleChange}
+                      error={formik.touched.address && Boolean(formik.errors.address)}
+                      helperText={formik.touched.address && formik.errors.address} 
+                      label="address" 
+                      variant="outlined"
+                      style={{ marginLeft: "210px", width: "340px", marginTop: "20px" }}
+                    /> <br /> <br />
+      
+                    <TextField
+                      id="city"
+                      name="city"
+                      value={formik.values.city}
+                      onChange={formik.handleChange}
+                      error={formik.touched.city && Boolean(formik.errors.city)}
+                      helperText={formik.touched.city && formik.errors.city} 
+                      label="city" 
+                      variant="outlined"
+                      style={{ marginLeft: "210px", width: "340px", marginTop: "20px" }}
+                    /> <br /> <br />
+      
+                    <TextField
+                      id="country"
+                      name="country"
+                      value={formik.values.country}
+                      onChange={formik.handleChange}
+                      error={formik.touched.country && Boolean(formik.errors.country)}
+                      helperText={formik.touched.country && formik.errors.country} 
+                      label="country" 
+                      variant="outlined"
+                      style={{ marginLeft: "210px", width: "340px", marginTop: "20px" }}
+                    /> <br /> <br />              
+      
+      
+      
+                    <div className="checkoutbutton">
+                      <Button variant="contained" type='submit' onClick={()=>Navigate('/orderconfirm')}>Checkout</Button>
+                    </div>
+                  </form>
+                </div>
               </div>
-            </form>
-          </div>
-        </div>
       ) : (
         Navigate('/')
       )}
+
+      
+      
     </>
   );
 };
