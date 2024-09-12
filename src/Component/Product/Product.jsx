@@ -87,10 +87,6 @@ const Product = () => {
 
         }
         </div>
-        <div className="show">
-            <p>Showing 20 of 48 results</p>
-            <button>Show More</button>
-        </div>
         </div>
  
         </>
